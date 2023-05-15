@@ -1,0 +1,2 @@
+#! /bin/bash
+ls -mt | tr -d " "
