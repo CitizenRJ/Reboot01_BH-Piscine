@@ -1,12 +1,12 @@
 package piscine
 
 func UltimateDivMod(a *int, b *int) {
-	if *a < 0 {
-		*a = -*a
+	if *b == 0 {
+		return
 	}
 
-	if *b == 0 {
-		*b = 1
+	if *a < 0 {
+		*a = -*a
 	}
 
 	*a /= *b
