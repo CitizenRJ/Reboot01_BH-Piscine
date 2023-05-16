@@ -1,9 +1,11 @@
 package main
 
-func IsNegative(num int) string {
-	if num < 0 {
-		return "T"
+import "fmt"
+
+func IsNegative(nb int) {
+	if nb < 0 {
+		fmt.Println("T")
 	} else {
-		return "F"
+		fmt.Println("F")
 	}
 }
