@@ -1,12 +1,12 @@
 package piscine
 
-import "github.com/01-edu/z01"
+import "fmt"
 
 func IsNegative(nb int) {
-	if nb <= 0 {
-		z01.PrintRune('T')
+	if nb < 0 {
+		fmt.Print("T")
 	} else {
-		z01.PrintRune('F')
+		fmt.Print("F")
 	}
 }
 
@@ -14,5 +14,5 @@ func main() {
 	IsNegative(1)
 	IsNegative(0)
 	IsNegative(-1)
-	z01.Print("\n")
+	fmt.Println()
 }
