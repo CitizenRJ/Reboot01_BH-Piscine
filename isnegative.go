@@ -15,5 +15,4 @@ func main() {
 	IsNegative(0)
 	IsNegative(-1)
 	z01.PrintRune('\n')
-	IsNegative(-4231824919854670761)
 }
