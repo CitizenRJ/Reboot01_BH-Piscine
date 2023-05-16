@@ -9,6 +9,10 @@ func UltimateDivMod(a *int, b *int) {
 		*a = -*a
 	}
 
-	*a /= *b
-	*b = *a % *b
+	if (*a % *b) == 0 {
+		*a /= *b
+		*b = *a % *b
+	} else {
+		return
+	}
 }
