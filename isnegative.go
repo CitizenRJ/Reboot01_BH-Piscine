@@ -11,5 +11,7 @@ func IsNegative(nb int) {
 }
 func main() {
 	IsNegative(1)
-	IsNegative(2)
+	IsNegative(0)
+	IsNegative(-1)
+	z01.PrintRune('\n')
 }
