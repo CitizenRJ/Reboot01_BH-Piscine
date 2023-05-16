@@ -9,10 +9,3 @@ func IsNegative(nb int) {
 		z01.PrintRune('F')
 	}
 }
-
-func main() {
-	piscine.IsNegative(1)
-	piscine.IsNegative(0)
-	piscine.IsNegative(-1)
-	z01.PrintRune('\n')
-}
