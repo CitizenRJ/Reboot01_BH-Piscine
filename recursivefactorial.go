@@ -2,10 +2,11 @@ package piscine
 
 func RecursiveFactorial(nb int) int {
 
-		if( n == 0 && n== 1){
-		  return n }
-		
-		else return n * RecursiveFactorial(n-1);
-		
-		}
-		
+	if nb == 0 {
+		return 1
+	} else if nb < 0 || nb > 12 {
+		return 0
+	} else {
+		return nb * RecursiveFactorial(nb-1)
+	}
+}
