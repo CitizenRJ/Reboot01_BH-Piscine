@@ -5,11 +5,9 @@ func RecursiveFactorial(nb int) int {
 		return 0
 	} else if nb == 0 {
 		return 1
+	} else if nb > 20 {
+		return 0
 	} else {
-		result := 1
-		for i := 1; i <= nb; i++ {
-			result *= i
-		}
-		return result
+		return nb * RecursiveFactorial(nb-1)
 	}
 }
