@@ -5,5 +5,5 @@ func RecursivePower(nb int, power int) int {
 		return 1
 	}
 
-	return nb * RecursivePower(nb, power-1)
+	return nb * RecursivePower(nb, power/2) * RecursivePower(nb, power%2)
 }
