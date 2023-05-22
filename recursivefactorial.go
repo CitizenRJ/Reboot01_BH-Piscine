@@ -13,7 +13,6 @@ func RecursiveFactorial(nb int) int {
 	
 	if result = nb * RecursiveFactorial(nb-1)
 	
-	{ return result
-}
+	return result
 
 }
