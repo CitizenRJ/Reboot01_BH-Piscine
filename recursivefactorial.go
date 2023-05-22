@@ -7,13 +7,13 @@ func RecursiveFactorial(nb int) int {
 		return 1
 	} 
 	
-	else if nb < 0 || nb >= 13 {
+	if nb < 0 || nb >= 13 {
 		return 0
 	} 
 	
-	else {
-		result = nb * RecursiveFactorial(nb-1)
-	}
+	if result = nb * RecursiveFactorial(nb-1)
 	
-	return result
+	{ return result
+}
+
 }
