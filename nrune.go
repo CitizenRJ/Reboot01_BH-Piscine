@@ -5,9 +5,7 @@ func NRune(s string, n int) rune {
 		if index == n-1 {
 			return letter
 		}
-
 	}
 
 	return 0
-
 }
