@@ -5,5 +5,14 @@ func RecursivePower(nb int, power int) int {
 		return 1
 	}
 
-	return nb * RecursivePower(nb, power/2) * RecursivePower(nb, power%2)
+	result := 1
+
+	if power%2 == 1 {
+		result *= nb
+	}
+
+	nb *= nb
+	power /= 2
+
+	return RecursivePower(nb, power) * result
 }
