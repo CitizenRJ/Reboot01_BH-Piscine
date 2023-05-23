@@ -8,22 +8,19 @@ func Alpha(s, rune) bool {
 }
 
 func Capitalize(s string) string {
-	r := []rune(s)
 	first := true
-	for i := range runes {
-		if Alpha(runes[i])== true && first {
-			if runes[i] >= 'a' && runes [i] <= 'z' {
-				runes[i] -= 32
+	r := []rune(s)
+	for i := 0; i < len(s); i++ {
+		if first && Alpha(r[i]) {
+			if r[i] >= 'a' && r[i] <= 'z' {
+				r[i] = r[i] + 'A' - 'a'
 			}
 			first = false
-			}
-
-		else if runes[i] >= 'A' && runes[i] <= 'Z' {
-			ruines[i] += 32
-			}
-			else if Alpha(runes[i]) == false {
-				first = true
-			}
+		} else if r[i] >= 'A' && r[i] <= 'Z' {
+			r[i] = r[i] + 'a' - 'A'
+		} else if !Alpha(r[i]) {
+			first = true
+		}
 	}
-	return string(runes)
+	return string(r)
 }
