@@ -11,7 +11,7 @@ func Capitalize(s string) string {
 	r := []rune(s)
 	first := true
 	for i := range runes {
-		if check(runes[i])== true && first {
+		if Alpha(runes[i])== true && first {
 			if runes[i] >= 'a' && runes [i] <= 'z' {
 				runes[i] -= 32
 			}
@@ -21,7 +21,7 @@ func Capitalize(s string) string {
 		else if runes[i] >= 'A' && runes[i] <= 'Z' {
 			ruines[i] += 32
 			}
-			else if check(runes[i]) == false {
+			else if Alpha(runes[i]) == false {
 				first = true
 			}
 	}
