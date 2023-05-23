@@ -1,19 +1,23 @@
 package piscine
 
 func TrimAtoi(s string) int {
-	x := 0
-	y := 1
+	x := true
+	y := false
+	z := 0
+	var nb rune = 48
 	for _, i := range s {
-		if i == '-' && x == '0' {
-			y = -1
+		if i == '-' && x {
+			y = true
 		}
-		if i >= '0' && i <= '9' {
-			x = x*10 + int(i-48)
+		if i >= nb && i <= 57 {
+			z *= 10
+			z += int(i - 48)
+			x = false
 		}
 	}
-	if y {
-		return -x
+	if y == true {
+		return -z
 	} else {
-		return x
+		return z
 	}
 }
