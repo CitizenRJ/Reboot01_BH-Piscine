@@ -1,17 +1,13 @@
 package piscine
 
+import "strconv"
+
 func TrimAtoi(s string) int {
-	x := ""
+	var s string
 	for _, i := range s {
-		if (i >= '0' && i <= '9') || i == '-' {
-			if len(x) == 0 && i == '-' {
-				x + string(i)
-				continue
-			}
-			if i != '-' {
-				x + string(i)
-			}
+		if (i >= '0' && i <= '9') || (i == '-' && s == "") {
+			s += string(s)
 		}
 	}
-	return Atoi(x)
+	a, _ := strconv.Atoi(s)
 }
