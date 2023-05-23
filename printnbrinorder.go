@@ -8,7 +8,7 @@ func PrintNbrInOrder(n int) {
 		z01.PrintRune(rune(n + '0'))
 	} else {
 		for {
-			if = n == 0 {
+			if n == 0 {
 				break
 			}
 			x[n%10]++
