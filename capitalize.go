@@ -1,7 +1,7 @@
 package piscine
 
 func Alpha(s, rune) bool {
-	if (s > 'z' || s < 'a') && (s < '0' || s > '9') && (s > 'Z' || s < 'A') {
+	if (s > 'z' && s < 'a') || (s < '0' && s > '9') || (s > 'Z' && s < 'A') {
 		return false
 	}
 	return true
