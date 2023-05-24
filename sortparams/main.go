@@ -7,18 +7,23 @@ import (
 )
 
 func main() {
-	a := os.Args[1:]
-	for i := 0; i < len(a)-1; i++ {
-		for j := i + 1; j < len(a); j++ {
-			if a[i] > a[j+1] {
-				a[i], a[j+1] = a[j+1], a[i]
+	var a int
+	for i := range os.Args {
+		a = 1
+	}
+	for i := 1; i <= a; i++ {
+		for j := 1; j <= a; j++ {
+			if os.Args[i] < os.Args[j] {
+				os.Args[i], os.Args[j] = os.Args[j], os.Args[i]
 			}
 		}
 	}
-	for j := len(a) - 2; j >= 0; j-- {
-		for _, k := range a[j] {
-			z01.PrintRune(k)
+	for i := range os.Args {
+		if i > 0 {
+			for _, x := range os.Args[i] {
+				z01.PrintRune(x)
+			}
+			z01.PrintRune('\n')
 		}
-		z01.PrintRune('\n')
 	}
 }
