@@ -6,19 +6,22 @@ func isAlphanumeric(r rune) bool {
 
 func Capitalize(s string) string {
 	runes := []rune(s)
+	first := true
 
 	for i := 0; i < len(runes); i++ {
 		if !isAlphanumeric(runes[i]) {
-			continue
-		}
-		if i == 0 || isAlphanumeric(runes[i-1]) {
-			if runes[i] >= 'a' && runes[i] <= 'z' {
-				runes[i] = runes[i] - 32
+			if first {
+				if runes[i] >= 'a' && runes[i] <= 'z' {
+					runes[i] = runes[i] - 32
+				}
+				first = false
+			} else {
+				if runes[i] >= 'A' && runes[i] <= 'Z' {
+					runes[i] = runes[i] + 32
+				}
 			}
 		} else {
-			if runes[i] >= 'A' && runes[i] <= 'Z' {
-				runes[i] = runes[i] + 32
-			}
+			first = true
 		}
 	}
 	return string(runes)
