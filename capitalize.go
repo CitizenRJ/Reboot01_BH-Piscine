@@ -12,13 +12,13 @@ func Capitalize(s string) string {
 		}
 		if first {
 			if runes[i] >= 'A' && runes[i] <= 'Z' {
-				runes[i] = runes[i] - 'A' + 'a'
+				runes[i] = runes[i] + 32
 			}
 			first = false
 			continue
 		}
 		if runes[i] >= 'a' && runes[i] <= 'z' {
-			runes[i] = runes[i] - 'a' + 'A'
+			runes[i] = runes[i] - 32
 		}
 	}
 	return string(runes)
