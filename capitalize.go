@@ -6,7 +6,7 @@ func isAlphanumeric(r rune) bool {
 
 func Capitalize(s string) string {
 	runes := []rune(s)
-	first := false
+	first := true
 
 	for i := 0; i < len(runes); i++ {
 		if isAlphanumeric(runes[i]) {
