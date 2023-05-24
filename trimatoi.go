@@ -5,21 +5,25 @@ func TrimAtoi(s string) int {
 	str := false
 	num := 0
 	
-	for i:= 0, i < len(s); i++ {
-		j := s[i]
-		if j == '-' && !str {
-			neg = true
-			str = true
-		} else if j == '+' && !str {
-			str = true
-		} else if j >= '0' && i <= '9' {
+	if j:= s[0] {
+	if j == '-'|| j == '+' || (j >= '0' && j <= '9') {
+		num = int(j - '0')
+		str = true
+	}
+}
+	for _, j:= range s[1:] {
+		if j >= '0' && i <= '9' {
 			num = num*10 + int(j-'0')
 			str = true
-		} else if j != ' ' {
-			return 0
-			
-		}
+		} else if str {
+			break
+		} else if j == '-' {
+			neg = true
+			str = true
+		} else if j == '+' {
+		str = true
 	}
+}
 	if neg {
 		num = -num
 	}
