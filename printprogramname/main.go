@@ -1,12 +1,12 @@
 package main
 
 import(
-	"github.com/01-edu/z01"
-
 	"os"
+	
+	"github.com/01-edu/z01"
 )
 
-func main () {
+func main() {
 	arguments := os.Args
 	name := arguments[0]
 	runes := []rune(name)
@@ -14,5 +14,4 @@ func main () {
 		z01.PrintRune(runes[i])
 	}
 	z01.PrintRune('\n')
-
 }
