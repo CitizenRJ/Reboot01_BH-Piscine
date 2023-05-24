@@ -14,7 +14,13 @@ func TrimAtoi(s string) int {
 			num = num*10 + int(i-'0')
 			str = true
 		} else if i != ' ' {
-			break
+			if str {
+				break
+			} else if i == 's' && len(s) > 2 && s[1] == 't' && s[2] == 'r' {
+				s = s[3:]
+			} else {
+				break
+			}
 		}
 	}
 	if neg {
