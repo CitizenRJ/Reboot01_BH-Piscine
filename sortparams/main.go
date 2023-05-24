@@ -15,7 +15,7 @@ func main() {
 			}
 		}
 	}
-	for j := 1; j < len(a); j++ {
+	for j := len(a) - 1; j >= 0; j-- {
 		for _, k := range a[j] {
 			z01.PrintRune(k)
 		}
