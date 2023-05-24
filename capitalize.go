@@ -10,11 +10,10 @@ func Capitalize(s string) string {
 
 	for i := 0; i < len(runes); i++ {
 		if isAlphanumeric(runes[i]) {
-			if first || (i == 0 && runes[i] >= 'a' && runes[i] <= 'z') {
-				runes[i] = runes[i] - 32
-				first = false
-			} else if runes[i] >= 'A' && runes[i] <= 'Z' {
-				runes[i] = runes[i] + 32
+			if first && runes[i] >= 'a' && runes[i] <= 'z' {
+				runes[i] = runes[i] - ('a' - 'A')
+			} else if !first && runes[i] >= 'A' && runes[i] <= 'Z' {
+				runes[i] = runes[i] + ('a' - 'A')
 			}
 			first = false
 		} else {
