@@ -1,28 +1,25 @@
 package piscine
 
-func Alpha(s, rune) bool {
-	if (s >= 'z' && s <= 'a') || (s >= '0' && s <= '9') || (s >= 'Z' && s <= 'A') {
-		for i := 0; i < 1; i++ {
-			return true
-		}
-	}
-	return false
-}
-
 func Capitalize(s string) string {
+	runes := []rune(s)
+
 	first := true
-	r := []rune(s)
-	for i := 0; i < len(s); i++ {
-		if first && Alpha(s[i]) {
-			if s[i] >= 'a' && s[i] <= 'z' {
-				s[i] = s[i] - 32
+
+	for i := 0; i < len(runes); i++ {
+		if runes[i] == ' ' || runes[i] == '+' {
+			first = true
+			continue
+		}
+		if first {
+			if runes[i] >= 'A' && runes[i] <= 'Z' {
+				runes[i] = runes[i] - 'A' + 'a'
 			}
 			first = false
-		} else if s[i] >= 'A' && s[i] <= 'Z' {
-			s[i] = s[i] + 32
-		} else if !(Alpha(s[i])) {
-			first = true
+			continue
+		}
+		if runes[i] >= 'a' && runes[i] <= 'z' {
+			runes[i] = runes[i] - 'a' + 'A'
 		}
 	}
-	return string(s)
+	return string(runes)
 }
