@@ -15,9 +15,9 @@ func main() {
 			}
 		}
 	}
-	for _, a := range a {
-		for _, b := range a {
-			z01.PrintRune(b)
+	for _, b := range a {
+		for _, c := range b {
+			z01.PrintRune(c)
 		}
 	}
 	z01.PrintRune('\n')
