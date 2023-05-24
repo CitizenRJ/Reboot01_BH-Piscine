@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	i := os.Args[1:]
-	for _, j := range i {
-		for k := 0; k < len(j); k++ {
-			z01.PrintRune(rune(i[k]))
+	a := os.Args[1:]
+	for _, i := range a {
+		for j := 0; j < len(i); j++ {
+			z01.PrintRune(rune(i[j]))
 		}
 		z01.PrintRune('\n')
 	}
