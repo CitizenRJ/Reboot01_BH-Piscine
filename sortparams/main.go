@@ -15,10 +15,11 @@ func main() {
 			}
 		}
 	}
-	for _, b := range a {
-		for _, c := range b {
-			z01.PrintRune(c)
+	for j := 1; j < len(a); j++ {
+		for _, k := range a[j] {
+			z01.PrintRune(k)
 		}
+		z01.PrintRune('\n')
 	}
-	z01.PrintRune('\n')
+
 }
