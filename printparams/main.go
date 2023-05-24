@@ -12,6 +12,6 @@ func main () {
 		for k := 0; k < len(j); k++ {
 			z01.PrintRune(rune(i[k]))
 		}
-		z01.PrintRune()'\n'
+		z01.PrintRune('\n')
 	}
 }
