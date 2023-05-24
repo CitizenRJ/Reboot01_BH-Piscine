@@ -6,7 +6,7 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func main () {
+func main() {
 	i := os.Args[1:]
 	for _, j := range i {
 		for k := 0; k < len(j); k++ {
