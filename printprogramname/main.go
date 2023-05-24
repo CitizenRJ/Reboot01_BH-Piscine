@@ -1,8 +1,8 @@
 package main
 
-import(
+import (
 	"os"
-	
+
 	"github.com/01-edu/z01"
 )
 
