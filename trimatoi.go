@@ -5,7 +5,7 @@ func TrimAtoi(s string) int {
 	str := false
 	num := 0
 	nb := rune('0')
-	for _, c := range s {
+	for _, i := range s {
 		if i == '-' && !str {
 			neg = true
 			str = true
