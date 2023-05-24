@@ -7,10 +7,7 @@ import (
 )
 
 func main() {
-	var a int
-	for i := range os.Args {
-		a = 1
-	}
+	a := len(os.Args) - 1
 	for i := 1; i <= a; i++ {
 		for j := 1; j <= a; j++ {
 			if os.Args[i] < os.Args[j] {
@@ -18,12 +15,10 @@ func main() {
 			}
 		}
 	}
-	for i := range os.Args {
-		if i > 0 {
+		i := 1; i <= a; i++ {
 			for _, x := range os.Args[i] {
 				z01.PrintRune(x)
 			}
 			z01.PrintRune('\n')
 		}
 	}
-}
