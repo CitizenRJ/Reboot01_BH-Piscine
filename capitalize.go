@@ -1,11 +1,11 @@
 package piscine
 
 func Alpha(s, rune) bool {
-	for i := 0; i 1; i++ {
-		if (s >= 'z' && s <= 'a') || (s >= '0' && s <= '9') || (s >= 'Z' && s <= 'A') {
-		return true
+	if (s >= 'z' && s <= 'a') || (s >= '0' && s <= '9') || (s >= 'Z' && s <= 'A') {
+		for i := 0; i < 1; i++ {
+			return true
+		}
 	}
-}
 	return false
 }
 
