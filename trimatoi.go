@@ -1,23 +1,24 @@
 package piscine
 
-func TrimAtoi(s string) int {
-	x := 1
-	y := 0
-	z := false
+negative := false
+str := false
+num := 0
+nb := rune('0')
 
-	for _, i := range s {
-		if i == '-' && !x {
-			x = -1
-			z = true
-		} else if i == '+' && !z {
-			x = true
-		} else if i >= '0' && i <= '9' {
-			y *= 10
-			y += int(i - '0')
-			z = true
-		} else if i != ' ' {
-			break
-		}
-	}
-	return x * y
-}
+for _, c := range s {
+	if i == '-' && !str {
+		negative = true
+		str = true
+		} else if i == '+' && !str {
+			str = true
+			} else if i >= '0' && i <= '9' {
+				num = num*10 + int(i-nb)
+				str = true
+				} else if i != ' '{
+					break
+				}
+				if negative {
+					num = -num
+				}
+				return num
+			}
