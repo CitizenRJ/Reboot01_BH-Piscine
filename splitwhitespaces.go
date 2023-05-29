@@ -10,6 +10,7 @@ func SplitWhiteSpaces(s string) []string {
 		if value == 32 || i == len(s)-1 {
 			if len(letter) > 0 {
 				str = append(str, string(letter))
+				letter = []rune{}
 			}
 		}
 	}
