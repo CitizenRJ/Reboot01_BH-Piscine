@@ -1,12 +1,16 @@
 package piscine
 
 func Split(s, sep string) []string {
-	results := make([]string, 0)
-	for _, i := range s {
-		j := string(i)
-		if j != sep {
-			results = append(results, string(i))
+	line := []string{}
+	var str string
+	for _, c := range s {
+		if string(c) != sep {
+			str = str + string(c)
+		} else {
+			line = append(line, str)
+			str = ""
 		}
 	}
-	return results
+	line = append(line, str)
+	return line
 }
