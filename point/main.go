@@ -30,7 +30,7 @@ func main() {
 	z01.PrintRune(' ')
 	z01.PrintRune('=')
 	z01.PrintRune(' ')
-	for _, := value_y := range points.y {
+	for _, value_y := range points.y {
 		z01.PrintRune(value_y)
 	}
 	z01.PrintRune('\n')
