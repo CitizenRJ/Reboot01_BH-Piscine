@@ -12,26 +12,31 @@ func setPoint(ptr *point) {
 	ptr.y = 21
 }
 
+func toint(nb int) {
+	x := '0'
+	if nb/10 > 0 {
+		toint(nb / 10)
+	}
+	for i := 0; i < nb%10; i++ {
+		x++ 
+	}
+	z01.PrintRune(x)
+}
+
+func tostr(s string) {
+	a := []rune(s)
+	for index := range a {
+		z01.PrintRune(a[index])
+	}
+}
+
 func main() {
 	points := &point{}
-
 	setPoint(points)
 
-	z01.PrintRune('x')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
-	for _, value_x := range point.x {
-		z01.PrintRune(value_x)
-	}
-	z01.PrintRune(',')
-	z01.PrintRune(' ')
-	z01.PrintRune('y')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
-	for _, value_y := range points.y {
-		z01.PrintRune(value_y)
-	}
+	tostr("x = ")
+	toint(points.x)
+	tostr(", y = ")
+	toint(points.y)
 	z01.PrintRune('\n')
-}
+	}
