@@ -17,7 +17,7 @@ func main() {
 
 	setPoint(points)
 	values := "x = 42, y = 21"
-\
+
 	for _, i := range values {
 		z01.PrintRune(i)
 	}
