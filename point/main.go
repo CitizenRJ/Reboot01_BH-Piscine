@@ -17,19 +17,19 @@ func main() {
 
 	setPoint(points)
 
-	z01.PrintRune('')
-	z01.PrintRune('')
-	z01.PrintRune('')
-	z01.PrintRune('')
+	z01.PrintRune('x')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
 	for _, value_x := range point.x {
 		z01.PrintRune(value_x)
 	}
-	z01.PrintRune('')
-	z01.PrintRune('')
-	z01.PrintRune('')
-	z01.PrintRune('')
-	z01.PrintRune('')
-	z01.PrintRune('')
+	z01.PrintRune(',')
+	z01.PrintRune(' ')
+	z01.PrintRune('y')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
 	for _, := value_y := range points.y {
 		z01.PrintRune(value_y)
 	}
