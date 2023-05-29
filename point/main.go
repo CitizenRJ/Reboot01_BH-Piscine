@@ -18,7 +18,7 @@ func toint(nb int) {
 		toint(nb / 10)
 	}
 	for i := 0; i < nb%10; i++ {
-		x++ 
+		x++
 	}
 	z01.PrintRune(x)
 }
@@ -39,4 +39,4 @@ func main() {
 	tostr(", y = ")
 	toint(points.y)
 	z01.PrintRune('\n')
-	}
+}
