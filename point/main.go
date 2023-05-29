@@ -3,8 +3,8 @@ package main
 import "github.com/01-edu/z01"
 
 type point struct {
-	x := int
-	y := int
+	x int
+	y int
 }
 
 
