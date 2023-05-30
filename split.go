@@ -2,23 +2,23 @@ package piscine
 
 func Split(s, sep string) []string {
 	a := []string{}
-	mot := ""
+	b := ""
 	length := 0
 	for i, v := range s {
 		if len(s) == i+1 {
-			mot += string(v)
-			a = append(a, mot)
+			b += string(v)
+			a = append(a, b)
 		}
 		if len(sep) == length {
-			a = append(a, mot[0:len(mot)-len(sep)])
-			mot = ""
+			a = append(a, b[0:len(b)-len(sep)])
+			b = ""
 			length = 0
 		}
 		if string(v) == string(sep[length]) {
 			length++
-			mot += string(v)
+			b += string(v)
 		} else {
-			mot += string(v)
+			b += string(v)
 			length = 0
 			if string(v) == string(sep[length]) {
 				length++
