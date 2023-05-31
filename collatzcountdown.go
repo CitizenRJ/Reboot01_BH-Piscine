@@ -11,7 +11,7 @@ func CollatzCountdown(start int) int {
 		} else {
 			start = 3*start + 1
 		}
-		count ++
+		count++
 	}
 	return count
 }
