@@ -10,16 +10,6 @@ package piscine
 //	Tail *NodeL
 //}
 
-func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
-	n := l.Head
-	for n != nil {
-		if cond(n) {
-			f(n)
-		}
-		n = n.Next
-	}
-}
-
 func IsPositive_node(node *NodeL) bool {
 	switch node.Data.(type) {
 	case int, float32, float64, byte:
@@ -48,4 +38,26 @@ func IsNotNumeric_node(node *NodeL) bool {
 		return true
 	}
 	return true
+}
+
+func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
+	templist := &List{}
+	for l.Head != nil {
+		if cond(l.Head) {
+			f(l.Head)
+		}
+		ListPushBack(templist, l.Head.Data)
+		l.Head = l.Head.Next
+	}
+	l.Head, l.Tail = templist.Head, templist.Tail
+}
+
+func ListPushBack(l *List, data interface{}) {
+	n := &NodeL{Data: data}
+
+	if l.Head == nil {
+		l.Head, l.Tail = n, n
+		return
+	}
+	l.Tail.Next, l.Tail = n, n
 }
