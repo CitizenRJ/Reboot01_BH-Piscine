@@ -1,22 +1,13 @@
 package piscine
 
-// type NodeL struct {
-// 	Data interface{}
-// 	Next *NodeL
-// }
-
-// type List struct {
-// 	Head *NodeL
-// 	Tail *NodeL
-// }
-
 func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
-	node := l.Head
-	for node != nil {
-		if cond(node) {
-			f(node)
+
+	n := l.Head
+	for n != nil {
+		if cond(n) {
+			f(n)
 		}
-		node = node.Next
+		n = n.Next
 	}
 }
 
