@@ -1,10 +1,10 @@
 package piscine
 
-type TreeNode struct {
-	Data  string
-	Left  *TreeNode
-	Right *TreeNode
-}
+//type TreeNode struct {
+//	Data  string
+//	Left  *TreeNode
+//	Right *TreeNode
+//}
 
 func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	if root == nil {
