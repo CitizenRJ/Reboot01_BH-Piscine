@@ -9,3 +9,23 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	}
 	return BTreeSearchItem(root.Right, elem)
 }
+
+func BTreeInsertData(root *TreeNode, data string) *TreeNode {
+	if root == nil {
+		return &TreeNode{Data: data}
+	}
+
+	if data < root.Data {
+		if root.Left == nil {
+			root.Left = &TreeNode{Data: data, Parent: root}
+			return root
+		}
+		return BTreeInsertData(root.Left, data)
+	}
+
+	if root.Right == nil {
+		root.Right = &TreeNode{Data: data, Parent: root}
+		return root
+	}
+	return BTreeInsertData(root.Right, data)
+}
