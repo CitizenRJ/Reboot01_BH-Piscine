@@ -1,16 +1,21 @@
 package piscine
 
-func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
+func BTreeInsertData(root *TreeNode, data string) {
 	if root == nil {
-		return nil
+		return
 	}
-	if root.Data == elem {
-		return root
+
+	if data < root.Data {
+		if root.Left == nil {
+			root.Left = &TreeNode{Data: data, Parent: root}
+		} else {
+			BTreeInsertData(root.Left, data)
+		}
+	} else {
+		if root.Right == nil {
+			root.Right = &TreeNode{Data: data, Parent: root}
+		} else {
+			BTreeInsertData(root.Right, data)
+		}
 	}
-	leftResult := BTreeSearchItem(root.Left, elem)
-	if leftResult != nil {
-		return leftResult
-	}
-	rightResult := BTreeSearchItem(root.Right, elem)
-	return rightResult
 }
