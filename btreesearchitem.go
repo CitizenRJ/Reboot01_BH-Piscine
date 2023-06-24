@@ -1,16 +1,19 @@
 package piscine
 
-//type TreeNode struct {
-//	Left, Right, Parent *TreeNode
-//	Data                string
-//}
-
 func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
-	if root == nil || root.Data == elem {
-		return root
+	return searchItemHelper(root, elem, nil)
+}
+
+func searchItemHelper(root *TreeNode, elem string, parent *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if root.Data == elem {
+		return parent
 	}
 	if elem < root.Data {
-		return BTreeSearchItem(root.Left, elem)
+		return searchItemHelper(root.Left, elem, root)
+	} else {
+		return searchItemHelper(root.Right, elem, root)
 	}
-	return BTreeSearchItem(root.Right, elem)
 }
